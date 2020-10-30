@@ -1,0 +1,1 @@
+# fava_inventory
