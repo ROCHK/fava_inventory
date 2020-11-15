@@ -28,6 +28,8 @@ class InventoryList(FavaExtensionBase):  # pragma: no cover
         for account in self.config[0]:
             types.append((account, str(Decimal)))
 
+        types.append(("Total", str(Decimal)))
+
         return types
 
     # returns contents of query_table
@@ -74,8 +76,12 @@ class InventoryList(FavaExtensionBase):  # pragma: no cover
             row["SKU"] = inventory
 
             balances = inventories[inventory]
+            total = 0
             for balance in balances:
                 row[balance] = balances[balance]
+                if (balance != "Name"):
+                    total += row[balance]
+            row["Total"] = total
 
             rows.append(row)
 
