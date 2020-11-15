@@ -8,7 +8,7 @@ setup(
     name='fava_inventory',
     use_scm_version=True,
     setup_requires=['setuptools_scm'],
-    description='Show expiry of airline miles, rewards points',
+    description='Fava extension for beancount physical inventory balances',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
     url='https://github.com/ROCHK/fava_inventory',
