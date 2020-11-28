@@ -52,7 +52,7 @@ class InventoryList(FavaExtensionBase):  # pragma: no cover
             for bal in account.balance:
                 sku = bal[0]
                 inventory = inventories.get(sku) if (inventories.get(sku) is not None) else {}
-                inventory[label] = account.balance[bal]
+                inventory[label] = inventory[label] + account.balance[bal] if label in inventory else account.balance[bal]
                 inventories[sku] = inventory
 
         return self._get_rows_from_inventories(inventories)
