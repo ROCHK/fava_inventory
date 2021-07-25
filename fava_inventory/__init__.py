@@ -17,6 +17,10 @@ class InventoryList(FavaExtensionBase):  # pragma: no cover
 
     report_title = "Inventory"
 
+    # returns ledger
+    def get_ledger(self):
+        return self.ledger
+
     # returns types for query_table headers
     def get_types(self):
 
