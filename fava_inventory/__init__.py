@@ -36,7 +36,7 @@ class InventoryList(FavaExtensionBase):  # pragma: no cover
     def get_inventories(self):
 
         tree = self.ledger.root_tree
-        commodities = self.ledger.all_entries_by_type[Commodity]
+        commodities = self.ledger.all_entries_by_type.Commodity
 
         inventories = {}
 
